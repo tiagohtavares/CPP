@@ -6,7 +6,7 @@
 /*   By: ttavares <ttavares@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 14:45:13 by ttavares          #+#    #+#             */
-/*   Updated: 2023/09/18 15:20:00 by ttavares         ###   ########.fr       */
+/*   Updated: 2023/09/20 11:01:23 by ttavares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 #include <iostream>
 #include <string>
 #include <cstdlib>
+#include <cstring>
+#include <iomanip>
 #include "Contact.hpp"
 
 class PhoneBook
@@ -34,6 +36,7 @@ class PhoneBook
 		std::string input();
 		std::string InputNumber();
 		int	IsNum(std::string line);
+		std::string FormatString(std::string str);
 };
 
 #endif

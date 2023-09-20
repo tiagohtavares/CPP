@@ -6,13 +6,17 @@
 /*   By: ttavares <ttavares@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 11:07:38 by ttavares          #+#    #+#             */
-/*   Updated: 2023/09/18 13:10:23 by ttavares         ###   ########.fr       */
+/*   Updated: 2023/09/20 11:16:23 by ttavares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CONTACT_H
 # define CONTACT_H
 #include <iostream>
+#include <string>
+#include <cstdlib>
+#include <cstring>
+#include <iomanip>
 
 class Contact
 {
