@@ -5,8 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: ttavares <ttavares@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/09/20 15:17:30 by ttavares          #+#    #+#              #
-#    Updated: 2023/09/22 11:03:11 by ttavares         ###   ########.fr        #
+#    Created: 2023/09/22 12:56:04 by ttavares          #+#    #+#              #
+#    Updated: 2023/09/22 12:57:36 by ttavares         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ RM	= rm -f
 NAMES = main
 SRCS = $(NAMES:=.cpp)
 OBJS = $(NAMES:=.o)
-NAME = brain
+NAME = files
 
 all:	$(NAME)
 

@@ -6,17 +6,17 @@
 #    By: ttavares <ttavares@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/20 15:17:30 by ttavares          #+#    #+#              #
-#    Updated: 2023/09/22 11:03:11 by ttavares         ###   ########.fr        #
+#    Updated: 2023/09/22 12:44:06 by ttavares         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC	= c++ -Wall -Wextra -Werror -std=c++98
 RM	= rm -f
 
-NAMES = main
+NAMES = main Weapon HumanA HumanB
 SRCS = $(NAMES:=.cpp)
 OBJS = $(NAMES:=.o)
-NAME = brain
+NAME = violence
 
 all:	$(NAME)
 

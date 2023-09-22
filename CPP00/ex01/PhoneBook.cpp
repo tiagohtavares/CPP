@@ -6,7 +6,7 @@
 /*   By: ttavares <ttavares@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 13:35:23 by ttavares          #+#    #+#             */
-/*   Updated: 2023/09/20 11:12:53 by ttavares         ###   ########.fr       */
+/*   Updated: 2023/09/22 14:18:47 by ttavares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -156,7 +156,7 @@ std::string PhoneBook::FormatString(std::string str)
 
 void	PhoneBook::display()
 {
-	if (this->index == 0)
+	if (this->maxindex == 0)
 	{
 		std::cout << "Must add a contact first!" << std::endl;
 		return ;
@@ -185,6 +185,11 @@ void	PhoneBook::display()
 	{
 		std::cout << "Wich contact do you want to search?"<<std::endl;
 		line = PhoneBook::input();
+		if (!PhoneBook::IsNum(line))
+		{
+			std::cout << "Is not a number!" << std::endl;
+			continue ;
+		}
 		search = atoi(line.c_str());
 		if(search >= 0  && search < this->maxindex)
 		{
