@@ -5,30 +5,20 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ttavares <ttavares@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/20 14:32:24 by ttavares          #+#    #+#             */
-/*   Updated: 2023/09/25 11:58:07 by ttavares         ###   ########.fr       */
+/*   Created: 2023/09/25 11:03:04 by ttavares          #+#    #+#             */
+/*   Updated: 2023/09/25 11:49:48 by ttavares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "Harl.hpp"
 
-int main(void)
+int main()
 {
-	Zombie *zombie;
-
-	std::string str;
-	std::cout << "Name a zombie" << std::endl;
-	std::cin >> str;
-
-	randomChump(str);
-
-	std::cout << "Another" << std::endl;
-	std::cin >> str;
-	zombie = zombieHorde(4, str);
-	std::cout<< std::endl;
-	zombie->announce();
-	zombie++;
-	zombie->announce();
-	delete [] zombie;
-	return 0;
+	Harl test;
+	test.complain("DEBUG");
+	test.complain("INFO");
+	test.complain("WARNING");
+	test.complain("ERROR");
+	test.complain("What is going!");
+	return (0);
 }
