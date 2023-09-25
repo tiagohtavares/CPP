@@ -6,7 +6,7 @@
 /*   By: ttavares <ttavares@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 12:23:52 by ttavares          #+#    #+#             */
-/*   Updated: 2023/09/25 15:19:56 by ttavares         ###   ########.fr       */
+/*   Updated: 2023/09/25 15:37:53 by ttavares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,13 @@ Fixed::Fixed()
 Fixed::~Fixed()
 {
 	std::cout << "Destructor called" << std::endl;
+}
+
+Fixed::Fixed(const int val)
+{
+	std::cout << "Int Constructor called, val is : "<< val << std::endl;
+	this->fixed = val << this->fractional;
+	std::cout << "Value is " << this->fixed << std::endl;
 }
 
 Fixed::Fixed(const Fixed &c)
