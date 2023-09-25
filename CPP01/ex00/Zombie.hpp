@@ -6,12 +6,12 @@
 /*   By: ttavares <ttavares@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 12:29:05 by ttavares          #+#    #+#             */
-/*   Updated: 2023/09/20 14:39:30 by ttavares         ###   ########.fr       */
+/*   Updated: 2023/09/25 13:02:33 by ttavares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_H
-# define ZOMBIE
+#ifndef ZOMBIE_HPP
+# define ZOMBIE_HPP
 
 #include <string>
 #include <iostream>

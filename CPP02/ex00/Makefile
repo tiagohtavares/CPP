@@ -5,24 +5,23 @@
 #                                                     +:+ +:+         +:+      #
 #    By: ttavares <ttavares@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/09/22 12:56:04 by ttavares          #+#    #+#              #
-#    Updated: 2023/09/25 13:39:03 by ttavares         ###   ########.fr        #
+#    Created: 2023/09/20 12:26:32 by ttavares          #+#    #+#              #
+#    Updated: 2023/09/25 12:32:44 by ttavares         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CXX			= c++
-CPPFLAGS	= -Wall -Wextra -Werror -std=c++98
-RM 			= rm -f
+CC	= c++ -Wall -Wextra -Werror -std=c++98
+RM	= rm -f
 
-NAMES = main
+NAMES = main Fixed
 SRCS = $(NAMES:=.cpp)
 OBJS = $(NAMES:=.o)
-NAME = files
+NAME = Fixed
 
 all:	$(NAME)
 
 $(NAME): $(OBJS)
-	$(CXX) $(OBJS) -o $(NAME)
+	$(CC) $(OBJS) -o $(NAME)
 
 clean:
 	$(RM) $(OBJS)

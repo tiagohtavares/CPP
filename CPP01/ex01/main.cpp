@@ -6,7 +6,7 @@
 /*   By: ttavares <ttavares@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 14:32:24 by ttavares          #+#    #+#             */
-/*   Updated: 2023/09/25 11:58:07 by ttavares         ###   ########.fr       */
+/*   Updated: 2023/09/25 13:36:06 by ttavares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,9 @@ int main(void)
 	std::cin >> str;
 	zombie = zombieHorde(4, str);
 	std::cout<< std::endl;
-	zombie->announce();
-	zombie++;
-	zombie->announce();
+	zombie[0].announce();
+	zombie[1].announce();
+	std::cout<< std::endl;
 	delete [] zombie;
 	return 0;
 }

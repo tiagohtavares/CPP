@@ -6,12 +6,13 @@
 /*   By: ttavares <ttavares@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/22 12:57:42 by ttavares          #+#    #+#             */
-/*   Updated: 2023/09/25 10:54:08 by ttavares         ###   ########.fr       */
+/*   Updated: 2023/09/25 15:03:50 by ttavares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <fstream>
+#include <cstring>
 
 int main(int argc, char **argv)
 {
@@ -26,7 +27,7 @@ int main(int argc, char **argv)
 	if(!inputFile)
 		return 1;
 
-	inputFile.open(filename);
+	inputFile.open(filename.c_str());
 	std::string original;
 	std::string temp;
 	bool isFirstLine = true;
@@ -39,8 +40,8 @@ int main(int argc, char **argv)
         original += temp;
         isFirstLine = false;
     }
-	filename += ".replace";
-	std::ofstream outputFile(filename);
+	filename += ".replaced";
+	std::ofstream outputFile(filename.c_str());
 
 	if(!outputFile)
 		return 1;

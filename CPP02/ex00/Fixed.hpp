@@ -1,34 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ttavares <ttavares@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/20 12:29:05 by ttavares          #+#    #+#             */
-/*   Updated: 2023/09/25 13:02:26 by ttavares         ###   ########.fr       */
+/*   Created: 2023/09/25 12:18:57 by ttavares          #+#    #+#             */
+/*   Updated: 2023/09/25 12:36:46 by ttavares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_HPP
-# define ZOMBIE_HPP
+#ifndef FIXED_HPP
+# define FIXED_HPP
 
-#include <string>
 #include <iostream>
 
-class Zombie
+class Fixed
 {
-	private :
-		std::string name;
+	private:
+		int fixed;
+		static const int fractional = 8;
 	public :
-		Zombie(std::string str);
-		Zombie(void);
-		~Zombie(void);
-		void announce(void);
-		void set(std::string str);
+		Fixed();
+		~Fixed();
+		Fixed(const Fixed &c);
+		Fixed& operator=(const Fixed& t);
+		int getRawBits(void) const;
+		void setRawBits(int const raw);
 };
 
-void randomChump(std::string name);
-Zombie* newZombie(std::string name);
-Zombie* zombieHorde (int N, std::string name);
 #endif

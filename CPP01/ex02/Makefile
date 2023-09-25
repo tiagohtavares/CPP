@@ -6,12 +6,13 @@
 #    By: ttavares <ttavares@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/20 15:17:30 by ttavares          #+#    #+#              #
-#    Updated: 2023/09/22 11:03:11 by ttavares         ###   ########.fr        #
+#    Updated: 2023/09/25 15:11:34 by ttavares         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CC	= c++ -Wall -Wextra -Werror -std=c++98
-RM	= rm -f
+CXX			= c++
+CPPFLAGS	= -Wall -Wextra -Werror -std=c++98
+RM 			= rm -f
 
 NAMES = main
 SRCS = $(NAMES:=.cpp)
@@ -21,7 +22,7 @@ NAME = brain
 all:	$(NAME)
 
 $(NAME): $(OBJS)
-	$(CC) $(OBJS) -o $(NAME)
+	$(CXX) $(OBJS) -o $(NAME)
 
 clean:
 	$(RM) $(OBJS)
