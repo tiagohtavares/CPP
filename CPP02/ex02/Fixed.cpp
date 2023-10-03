@@ -6,7 +6,7 @@
 /*   By: ttavares <ttavares@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 12:23:52 by ttavares          #+#    #+#             */
-/*   Updated: 2023/10/03 12:15:25 by ttavares         ###   ########.fr       */
+/*   Updated: 2023/10/03 15:29:49 by ttavares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,28 +24,22 @@ Fixed::~Fixed()
 
 Fixed::Fixed(const int val)
 {
-	std::cout << "Int Constructor called, val is : "<< val << std::endl;
 	this->fixed = val << this->fractional;
-	std::cout << "Value is " << this->fixed << std::endl;
 }
 
 Fixed::Fixed(const float val)
 {
-	std::cout << "Float Constructor called, val is : "<< val << std::endl;
 	this->fixed = (val * (1 << this->fractional));
-	std::cout << "Value is " << this->fixed << std::endl;
 }
 
 int Fixed::toInt(void) const
 {
-	std::cout << "Converting fixed "<< this->fixed <<" to int" << std::endl;
 	int scaling = 1 << this->fractional;
 	return this->fixed / scaling;
 }
 
 float Fixed::toFloat(void) const
 {
-	std::cout << "Converting fixed "<< this->fixed <<" to float" << std::endl;
 	int scaling = 1 << this->fractional;
 	return (static_cast<float>(this->fixed) / static_cast<float>(scaling));
 }
@@ -69,14 +63,118 @@ std::ostream &operator<<(std::ostream &os, const Fixed &fixed)
 	return (os);
 }
 
+bool Fixed::operator>(const Fixed& t)
+{
+	if(this->fixed > t.fixed)
+		return true;
+	return false;
+}
+
+bool Fixed::operator<(const Fixed& t)
+{
+	if(this->fixed < t.fixed)
+		return true;
+	return false;
+}
+
+bool Fixed::operator>=(const Fixed& t)
+{
+	if(this->fixed >= t.fixed)
+		return true;
+	return false;
+}
+
+bool Fixed::operator<=(const Fixed& t)
+{
+	if(this->fixed <= t.fixed)
+		return true;
+	return false;
+}
+
+bool Fixed::operator==(const Fixed& t)
+{
+	if(this->fixed == t.fixed)
+		return true;
+	return false;
+}
+
+bool Fixed::operator!=(const Fixed& t)
+{
+	if(this->fixed != t.fixed)
+		return true;
+	return false;
+}
+
+int Fixed::operator+(const Fixed& t)
+{
+	return (this->fixed + t.fixed);
+}
+
+int Fixed::operator-(const Fixed& t)
+{
+	return (this->fixed - t.fixed);
+}
+
+int Fixed::operator*(const Fixed& t)
+{
+	return (this->fixed * t.fixed);
+}
+
+int Fixed::operator/(const Fixed& t)
+{
+	return (this->fixed / t.fixed);
+}
+
+Fixed& Fixed::operator++(void)
+{
+	this->fixed += 1;
+	return (*this);
+}
+
+Fixed& Fixed::operator--(void)
+{
+	this->fixed -= 1;
+	return (*this);
+}
+
+Fixed Fixed::operator++(int)
+{
+	Fixed temp;
+	temp = *this;
+	this->fixed += 1;
+	return (temp);
+}
+
+Fixed Fixed::operator--(int)
+{
+	Fixed temp;
+	temp = *this;
+	this->fixed -= 1;
+	return (temp);
+}
+
 int Fixed::getRawBits(void) const
 {
-	std::cout << "GetRawBits function called" << std::endl;
 	return this->fixed;
 }
 
 void Fixed::setRawBits(int const raw)
 {
-	std::cout << "SetRawBits function called" << std::endl;
 	this->fixed = raw;
+}
+
+static Fixed& min(Fixed& a, Fixed& b)
+{
+	if(a.getRawBits() > b.getRawBits())
+		return b;
+	else
+		return a;
+}
+
+static Fixed& min(const Fixed& a, const Fixed& b)
+{
+	if(a.getRawBits() > b.getRawBits())
+		return b;
+	else
+		return a;
 }
