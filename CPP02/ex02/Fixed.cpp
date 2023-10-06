@@ -6,7 +6,7 @@
 /*   By: ttavares <ttavares@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 12:23:52 by ttavares          #+#    #+#             */
-/*   Updated: 2023/10/03 15:29:49 by ttavares         ###   ########.fr       */
+/*   Updated: 2023/10/06 11:13:00 by ttavares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,24 +105,24 @@ bool Fixed::operator!=(const Fixed& t)
 	return false;
 }
 
-int Fixed::operator+(const Fixed& t)
+Fixed Fixed::operator+(const Fixed& t)
 {
-	return (this->fixed + t.fixed);
+	return Fixed(this->fixed + t.fixed);
 }
 
-int Fixed::operator-(const Fixed& t)
+Fixed Fixed::operator-(const Fixed& t)
 {
-	return (this->fixed - t.fixed);
+	return Fixed(this->fixed - t.fixed);
 }
 
-int Fixed::operator*(const Fixed& t)
+Fixed Fixed::operator*(const Fixed& t)
 {
-	return (this->fixed * t.fixed);
+	return Fixed(this->fixed * t.fixed);
 }
 
-int Fixed::operator/(const Fixed& t)
+Fixed Fixed::operator/(const Fixed& t)
 {
-	return (this->fixed / t.fixed);
+	return Fixed(this->fixed / t.fixed);
 }
 
 Fixed& Fixed::operator++(void)
@@ -163,7 +163,7 @@ void Fixed::setRawBits(int const raw)
 	this->fixed = raw;
 }
 
-static Fixed& min(Fixed& a, Fixed& b)
+Fixed& Fixed::min(Fixed& a, Fixed& b)
 {
 	if(a.getRawBits() > b.getRawBits())
 		return b;
@@ -171,10 +171,26 @@ static Fixed& min(Fixed& a, Fixed& b)
 		return a;
 }
 
-static Fixed& min(const Fixed& a, const Fixed& b)
+const Fixed& Fixed::min(const Fixed& a, const Fixed& b)
 {
 	if(a.getRawBits() > b.getRawBits())
 		return b;
 	else
 		return a;
+}
+
+Fixed& Fixed::max(Fixed& a, Fixed& b)
+{
+	if(a.getRawBits() > b.getRawBits())
+		return a;
+	else
+		return b;
+}
+
+const Fixed& Fixed::max(const Fixed& a, const Fixed& b)
+{
+	if(a.getRawBits() > b.getRawBits())
+		return a;
+	else
+		return b;
 }

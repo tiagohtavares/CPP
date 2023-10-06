@@ -6,7 +6,7 @@
 /*   By: ttavares <ttavares@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 12:16:21 by ttavares          #+#    #+#             */
-/*   Updated: 2023/10/03 15:16:40 by ttavares         ###   ########.fr       */
+/*   Updated: 2023/10/06 10:16:31 by ttavares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,26 @@ int main(void)
 	std::cout << "B = "<< b << std::endl;
 	std::cout << "++A = "<< ++a << std::endl;
 	std::cout << "--B = "<< --b << std::endl;
+	std::cout << std::endl;
+	std::cout << std::endl;
+	std::cout << std::endl;
 
-	std::cout << min(a,b) << std::endl;
+	Fixed const z(10);
+	Fixed const x(15);
+	std::cout << "A:"<< a << std::endl;
+	std::cout << "B:"<< b << std::endl;
+	std::cout << "Min: "<< Fixed::min(a,b) << std::endl;
+	std::cout << "Z:"<< z << std::endl;
+	std::cout << "X:"<< x << std::endl;
+	std::cout << "Min: "<< Fixed::min(z,x) << std::endl;
+	std::cout << "A:"<< a << std::endl;
+	std::cout << "B:"<< b << std::endl;
+	std::cout << "Max: "<< Fixed::max(a,b) << std::endl;
+	std::cout << "Z:"<< z << std::endl;
+	std::cout << "X:"<< x << std::endl;
+	std::cout << "Max: "<< Fixed::max(z,x) << std::endl;
+	std::cout << std::endl;
+	std::cout << std::endl;
+	std::cout << std::endl;
 	return 0;
 }
