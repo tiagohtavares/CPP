@@ -14,26 +14,31 @@
 
 Brain::Brain()
 {
-	this->_type = "Default";
 	std::cout << "Brain is born!" << std::endl;
 }
 
 Brain::~Brain()
 {
-	std::cout << "Brain " << _type << " is destroyed!" << std::endl;
+	std::cout << "Brain is destroyed!" << std::endl;
 }
 
 Brain::Brain( const Brain& cpy)
 {
-	this->_type = cpy._type;
-	std::cout << "Brain " << _type << " is copied!" << std::endl;
+	for(int i = 0; i < 100; i++)
+	{
+		this->ideas[i] = cpy.ideas[i];
+	}
+	std::cout << "Brain is copied!" << std::endl;
 }
 
 Brain &Brain::operator=(const Brain& cpy)
 {
 	if(this != &cpy)
 	{
-		this->_type = cpy._type;
+		for(int i = 0; i < 100; i++)
+		{
+			this->ideas[i] = cpy.ideas[i];
+		}
 		std::cout << "Assignement copy of Brain is called!" << std::endl;
 	}
 	return *this;

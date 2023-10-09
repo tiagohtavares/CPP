@@ -6,7 +6,7 @@
 /*   By: ttavares <ttavares@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 10:23:24 by ttavares          #+#    #+#             */
-/*   Updated: 2023/10/09 14:12:02 by ttavares         ###   ########.fr       */
+/*   Updated: 2023/10/09 15:31:37 by ttavares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,13 @@
 Dog::Dog()
 {
 	this->_type = "Dog";
-	this->_brain = new Brain();
 	std::cout << "Dog constructor called" << std::endl;
+	this->_brain = new Brain();
 }
 
 Dog::~Dog()
 {
+	delete this->_brain;
 	std::cout << "Dog is destroyed!" << std::endl;
 }
 

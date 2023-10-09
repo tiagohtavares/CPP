@@ -6,7 +6,7 @@
 /*   By: ttavares <ttavares@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 10:23:24 by ttavares          #+#    #+#             */
-/*   Updated: 2023/10/09 14:11:59 by ttavares         ###   ########.fr       */
+/*   Updated: 2023/10/09 15:31:41 by ttavares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,13 @@
 Cat::Cat()
 {
 	this->_type = "Cat";
-	this->_brain = new Brain();
 	std::cout << "Cat constructor called" << std::endl;
+	this->_brain = new Brain();
 }
 
 Cat::~Cat()
 {
+	delete this->_brain;
 	std::cout << "Cat is destroyed!" << std::endl;
 }
 

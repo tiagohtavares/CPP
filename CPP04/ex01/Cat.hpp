@@ -6,7 +6,7 @@
 /*   By: ttavares <ttavares@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 14:55:03 by ttavares          #+#    #+#             */
-/*   Updated: 2023/10/09 14:15:07 by ttavares         ###   ########.fr       */
+/*   Updated: 2023/10/09 15:24:25 by ttavares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define CAT_HPP
 
 #include "Animal.hpp"
-#include "Cat.hpp"
+#include "Brain.hpp"
 
 class Cat : public Animal
 {
