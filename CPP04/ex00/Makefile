@@ -6,7 +6,7 @@
 #    By: ttavares <ttavares@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/20 12:26:32 by ttavares          #+#    #+#              #
-#    Updated: 2023/10/09 12:00:14 by ttavares         ###   ########.fr        #
+#    Updated: 2023/10/09 13:06:06 by ttavares         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,10 +14,10 @@ CXX			= c++
 CPPFLAGS	= -Wall -Wextra -Werror -std=c++98
 RM 			= rm -f
 
-NAMES = main
+NAMES = main Animal Dog Cat WrongAnimal WrongCat
 SRCS = $(NAMES:=.cpp)
 OBJS = $(NAMES:=.o)
-NAME = poly
+NAME = Animal
 
 all:	$(NAME)
 

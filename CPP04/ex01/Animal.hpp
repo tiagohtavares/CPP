@@ -1,35 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ttavares <ttavares@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/25 12:16:21 by ttavares          #+#    #+#             */
-/*   Updated: 2023/10/09 11:31:12 by ttavares         ###   ########.fr       */
+/*   Created: 2023/10/06 12:36:37 by ttavares          #+#    #+#             */
+/*   Updated: 2023/10/09 12:57:10 by ttavares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#ifndef ANIMAL_HPP
+# define ANIMAL_HPP
+#include <iostream>
 
-int main(void)
+class Animal
 {
-	ClapTrap Test1("Rufus");
-	ClapTrap Test2("Jeff");
-	ClapTrap Test3(Test1);
-	Test1 = Test2;
-	for(int i = 0;i < 5; i++)
-	{
-		Test1.attack("Boar");
-	}
-	Test1.takeDamage(9);
-	for(int i = 0;i < 10; i++)
-	{
-		Test1.beRepaired(1);
-	}
-	Test2.takeDamage(20);
-	Test2.attack("Seal");
-	Test2.beRepaired(1);
+	protected:
+		std::string _type;
+	public:
+		Animal();
+		Animal(std::string name);
+		virtual ~Animal();
+		Animal(const Animal& cpy );
+		Animal &operator=(const Animal& cpy);
+		virtual void makeSound() const;
+		std::string getType() const;
+} ;
 
-	return 0;
-}
+#endif

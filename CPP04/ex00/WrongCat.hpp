@@ -1,35 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   WrongWrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ttavares <ttavares@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/25 12:16:21 by ttavares          #+#    #+#             */
-/*   Updated: 2023/10/09 11:31:12 by ttavares         ###   ########.fr       */
+/*   Created: 2023/10/06 14:55:03 by ttavares          #+#    #+#             */
+/*   Updated: 2023/10/09 13:04:45 by ttavares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#ifndef WrongCAT_HPP
+# define WrongCAT_HPP
 
-int main(void)
+#include "WrongAnimal.hpp"
+
+class WrongCat : public WrongAnimal
 {
-	ClapTrap Test1("Rufus");
-	ClapTrap Test2("Jeff");
-	ClapTrap Test3(Test1);
-	Test1 = Test2;
-	for(int i = 0;i < 5; i++)
-	{
-		Test1.attack("Boar");
-	}
-	Test1.takeDamage(9);
-	for(int i = 0;i < 10; i++)
-	{
-		Test1.beRepaired(1);
-	}
-	Test2.takeDamage(20);
-	Test2.attack("Seal");
-	Test2.beRepaired(1);
+	private:
+	public:
+		WrongCat();
+		~WrongCat();
+		WrongCat(const WrongCat& cpy);
+		WrongCat& operator=(const WrongCat& cpy);
+		void makeSound() const;
+} ;
 
-	return 0;
-}
+#endif

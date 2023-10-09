@@ -1,35 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ttavares <ttavares@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/25 12:16:21 by ttavares          #+#    #+#             */
-/*   Updated: 2023/10/09 11:31:12 by ttavares         ###   ########.fr       */
+/*   Created: 2023/10/06 14:55:03 by ttavares          #+#    #+#             */
+/*   Updated: 2023/10/09 12:53:30 by ttavares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#ifndef DOG_HPP
+# define DOG_HPP
 
-int main(void)
+#include "Animal.hpp"
+
+class Dog : public Animal
 {
-	ClapTrap Test1("Rufus");
-	ClapTrap Test2("Jeff");
-	ClapTrap Test3(Test1);
-	Test1 = Test2;
-	for(int i = 0;i < 5; i++)
-	{
-		Test1.attack("Boar");
-	}
-	Test1.takeDamage(9);
-	for(int i = 0;i < 10; i++)
-	{
-		Test1.beRepaired(1);
-	}
-	Test2.takeDamage(20);
-	Test2.attack("Seal");
-	Test2.beRepaired(1);
+	private:
+	public:
+		Dog();
+		~Dog();
+		Dog(const Dog& cpy);
+		Dog& operator=(const Dog& cpy);
+		void makeSound() const;
+} ;
 
-	return 0;
-}
+#endif

@@ -6,30 +6,34 @@
 /*   By: ttavares <ttavares@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 12:16:21 by ttavares          #+#    #+#             */
-/*   Updated: 2023/10/09 11:31:12 by ttavares         ###   ########.fr       */
+/*   Updated: 2023/10/09 13:08:15 by ttavares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#include "WrongAnimal.hpp"
+#include "Animal.hpp"
+#include "Dog.hpp"
+#include "Cat.hpp"
+#include "WrongCat.hpp"
 
 int main(void)
 {
-	ClapTrap Test1("Rufus");
-	ClapTrap Test2("Jeff");
-	ClapTrap Test3(Test1);
-	Test1 = Test2;
-	for(int i = 0;i < 5; i++)
-	{
-		Test1.attack("Boar");
-	}
-	Test1.takeDamage(9);
-	for(int i = 0;i < 10; i++)
-	{
-		Test1.beRepaired(1);
-	}
-	Test2.takeDamage(20);
-	Test2.attack("Seal");
-	Test2.beRepaired(1);
+const Animal* meta = new Animal();
+const Animal* j = new Dog();
+const Animal* i = new Cat();
+std::cout << j->getType() << " " << std::endl;
+std::cout << i->getType() << " " << std::endl;
+i->makeSound(); //will output the cat sound!
+j->makeSound();
+meta->makeSound();
+std::cout << std::endl;
+std::cout << std::endl;
+std::cout << std::endl;
 
-	return 0;
+const WrongAnimal* metar = new WrongAnimal();
+const WrongAnimal* x = new WrongCat();
+std::cout << x->getType() << " " << std::endl;
+x->makeSound(); //will output parent animal makesound sound!
+metar->makeSound();
+return 0;
 }

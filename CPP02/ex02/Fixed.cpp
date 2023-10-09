@@ -25,6 +25,7 @@ Fixed::~Fixed()
 Fixed::Fixed(const int val)
 {
 	this->fixed = val << this->fractional;
+	std::cout << "Test";
 }
 
 Fixed::Fixed(const float val)
