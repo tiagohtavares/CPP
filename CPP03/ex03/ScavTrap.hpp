@@ -1,31 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ttavares <ttavares@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/06 12:36:37 by ttavares          #+#    #+#             */
-/*   Updated: 2023/10/16 10:48:29 by ttavares         ###   ########.fr       */
+/*   Created: 2023/10/06 14:55:03 by ttavares          #+#    #+#             */
+/*   Updated: 2023/10/16 12:01:46 by ttavares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-# define ANIMAL_HPP
-#include <iostream>
+#ifndef SCAVTRAP_HPP
+# define SCAVTRAP_HPP
 
-class Animal
+#include "ClapTrap.hpp"
+
+class ScavTrap : public virtual ClapTrap
 {
 	protected:
-		std::string _type;
+		static int const HP = 100;
+		static int const STM = 50;
+		static int const ATK = 20;
 	public:
-		Animal();
-		Animal(std::string name);
-		virtual ~Animal();
-		Animal(const Animal& cpy );
-		Animal &operator=(const Animal& cpy);
-		virtual void makeSound() const;
-		virtual std::string getType() const;
+		ScavTrap();
+		~ScavTrap();
+		ScavTrap(const std::string& _name);
+		ScavTrap(const ScavTrap& cpy);
+		ScavTrap& operator=(const ScavTrap& cpy);
+		void attack(const std::string& cpy);
+		void guardGate();
 } ;
 
 #endif

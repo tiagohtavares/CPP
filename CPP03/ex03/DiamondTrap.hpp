@@ -1,31 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ttavares <ttavares@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/06 12:36:37 by ttavares          #+#    #+#             */
-/*   Updated: 2023/10/16 10:48:29 by ttavares         ###   ########.fr       */
+/*   Created: 2023/10/16 11:22:23 by ttavares          #+#    #+#             */
+/*   Updated: 2023/10/16 12:13:30 by ttavares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-# define ANIMAL_HPP
+#ifndef DIAMONDTRAP_HPP
+# define DIAMONDTRAP_HPP
 #include <iostream>
 
-class Animal
+#include "ClapTrap.hpp"
+#include "FragTrap.hpp"
+#include "ScavTrap.hpp"
+
+class DiamondTrap : public virtual ScavTrap, public virtual FragTrap
 {
 	protected:
-		std::string _type;
+		std::string _name;
 	public:
-		Animal();
-		Animal(std::string name);
-		virtual ~Animal();
-		Animal(const Animal& cpy );
-		Animal &operator=(const Animal& cpy);
-		virtual void makeSound() const;
-		virtual std::string getType() const;
+		DiamondTrap();
+		DiamondTrap(const std::string name);
+		~DiamondTrap();
+		DiamondTrap(const DiamondTrap& cpy );
+		DiamondTrap &operator=(const DiamondTrap& cpy);
+		using ScavTrap::attack;
+		void printStats();
+		void whoAmi();
 } ;
 
 #endif

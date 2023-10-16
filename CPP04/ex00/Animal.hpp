@@ -6,7 +6,7 @@
 /*   By: ttavares <ttavares@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 12:36:37 by ttavares          #+#    #+#             */
-/*   Updated: 2023/10/09 12:57:10 by ttavares         ###   ########.fr       */
+/*   Updated: 2023/10/16 13:05:05 by ttavares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ class Animal
 		std::string _type;
 	public:
 		Animal();
-		Animal(std::string name);
 		virtual ~Animal();
 		Animal(const Animal& cpy );
 		Animal &operator=(const Animal& cpy);

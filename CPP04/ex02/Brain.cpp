@@ -26,7 +26,6 @@ Brain::~Brain()
 
 Brain::Brain( const Brain& cpy)
 {
-	*this = cpy;
 	for(int i = 0; i < 100; i++)
 	{
 		this->ideas[i] = cpy.ideas[i];

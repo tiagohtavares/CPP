@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Brain.cpp                                       :+:      :+:    :+:   */
+/*   Animal.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ttavares <ttavares@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,44 +10,46 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Brain.hpp"
+#include "Animal.hpp"
 
-Brain::Brain()
+Animal::Animal()
 {
-	this->ideas[0] = "Hi this ";
-	this->ideas[1] = "is brain!";
-	std::cout << "Brain is born!" << std::endl;
+	this->_type = "";
+	std::cout << "Animal is born!" << std::endl;
 }
 
-Brain::~Brain()
+Animal::Animal(std::string name) : _type(name)
 {
-	std::cout << "Brain is destroyed!" << std::endl;
+	std::cout << "Animal " << _type << " is born!" << std::endl;
 }
 
-Brain::Brain( const Brain& cpy)
+Animal::~Animal()
 {
-	*this = cpy;
-	for(int i = 0; i < 100; i++)
-	{
-		this->ideas[i] = cpy.ideas[i];
-	}
-	std::cout << "Brain is copied!" << std::endl;
+	std::cout << "Animal " << _type << " is destroyed!" << std::endl;
 }
 
-Brain &Brain::operator=(const Brain& cpy)
+Animal::Animal( const Animal& cpy)
+{
+	this->_type = cpy._type;
+	std::cout << "Animal " << _type << " is copied!" << std::endl;
+}
+
+Animal &Animal::operator=(const Animal& cpy)
 {
 	if(this != &cpy)
 	{
-		for(int i = 0; i < 100; i++)
-		{
-			this->ideas[i] = cpy.ideas[i];
-		}
-		std::cout << "Assignement copy of Brain is called!" << std::endl;
+		this->_type = cpy._type;
+		std::cout << "Assignement copy of animal is called!" << std::endl;
 	}
 	return *this;
 }
 
-std::string* Brain::getIdeas()
+void Animal::makeSound() const
 {
-	return(this->ideas);
+	std::cout << "Animal makes sound!" << std::endl;
+}
+
+std::string Animal::getType() const
+{
+	return(this->_type);
 }

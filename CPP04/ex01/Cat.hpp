@@ -6,7 +6,7 @@
 /*   By: ttavares <ttavares@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 14:55:03 by ttavares          #+#    #+#             */
-/*   Updated: 2023/10/09 15:24:25 by ttavares         ###   ########.fr       */
+/*   Updated: 2023/10/16 12:31:52 by ttavares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,10 @@ class Cat : public Animal
 		Brain *_brain;
 	public:
 		Cat();
-		~Cat();
+		virtual ~Cat();
 		Cat(const Cat& cpy);
 		Cat& operator=(const Cat& cpy);
+		Brain *getBrain();
 		void makeSound() const;
 } ;
 

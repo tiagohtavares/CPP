@@ -6,7 +6,7 @@
 /*   By: ttavares <ttavares@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 12:16:21 by ttavares          #+#    #+#             */
-/*   Updated: 2023/10/09 11:30:17 by ttavares         ###   ########.fr       */
+/*   Updated: 2023/10/16 11:18:34 by ttavares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,10 @@
 
 int main(void)
 {
-	ClapTrap A("Test");
+	ClapTrap A("Sara");
 	ClapTrap B(A);
-	ClapTrap C("Hello");
-	C = B;
+	ClapTrap C("Ana");
+	B = C;
 	A.attack("Boar");
 	B.attack("Boar");
 	C.attack("Boar");
@@ -30,9 +30,7 @@ int main(void)
 	ScavTrap Test1("Rufus");
 	ScavTrap Test4(Test1);
 	ScavTrap Test3("Tom");
-	Test4 = Test3;
-	Test1 = Test4;
-	ClapTrap Test2("Jeff");
+	Test4 = Test1;
 	for(int i = 0;i < 5; i++)
 	{
 		Test1.attack("Boar");
@@ -44,9 +42,6 @@ int main(void)
 		Test1.beRepaired(1);
 	}
 	Test1.guardGate();
-	Test2.takeDamage(20);
-	Test2.attack("Seal");
-	Test2.beRepaired(1);
 
 	return 0;
 }

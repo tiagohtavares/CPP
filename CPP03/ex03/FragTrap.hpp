@@ -1,31 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ttavares <ttavares@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/06 12:36:37 by ttavares          #+#    #+#             */
-/*   Updated: 2023/10/16 10:48:29 by ttavares         ###   ########.fr       */
+/*   Created: 2023/10/06 14:55:03 by ttavares          #+#    #+#             */
+/*   Updated: 2023/10/16 12:01:40 by ttavares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-# define ANIMAL_HPP
-#include <iostream>
+#ifndef FRAGTRAP_HPP
+# define FRAGTRAP_HPP
 
-class Animal
+#include "ClapTrap.hpp"
+
+class FragTrap : public virtual ClapTrap
 {
 	protected:
-		std::string _type;
+		static int const HP = 100;
+		static int const STM = 100;
+		static int const ATK = 30;
 	public:
-		Animal();
-		Animal(std::string name);
-		virtual ~Animal();
-		Animal(const Animal& cpy );
-		Animal &operator=(const Animal& cpy);
-		virtual void makeSound() const;
-		virtual std::string getType() const;
+		FragTrap();
+		~FragTrap();
+		FragTrap(const std::string& _name);
+		FragTrap(const FragTrap& cpy);
+		FragTrap& operator=(const FragTrap& cpy);
+		void attack(const std::string& cpy);
+		void highFivesGuys(void);
 } ;
 
 #endif

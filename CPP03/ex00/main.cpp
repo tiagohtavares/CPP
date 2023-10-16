@@ -6,7 +6,7 @@
 /*   By: ttavares <ttavares@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 12:16:21 by ttavares          #+#    #+#             */
-/*   Updated: 2023/10/09 11:31:12 by ttavares         ###   ########.fr       */
+/*   Updated: 2023/10/16 11:01:13 by ttavares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ int main(void)
 	Test2.takeDamage(20);
 	Test2.attack("Seal");
 	Test2.beRepaired(1);
-
+	Test3.takeDamage(1);
+	Test3 = Test2;
+	Test3.takeDamage(1);
 	return 0;
 }

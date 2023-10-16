@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FrapTrap.hpp                                       :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ttavares <ttavares@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 14:55:03 by ttavares          #+#    #+#             */
-/*   Updated: 2023/10/09 11:35:38 by ttavares         ###   ########.fr       */
+/*   Updated: 2023/10/16 11:59:17 by ttavares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,12 @@
 
 #include "ClapTrap.hpp"
 
-class FragTrap : public ClapTrap
+class FragTrap : public virtual ClapTrap
 {
 	private:
+		static int const HP = 100;
+		static int const STM = 100;
+		static int const ATK = 30;
 	public:
 		FragTrap();
 		~FragTrap();

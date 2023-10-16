@@ -6,7 +6,7 @@
 /*   By: ttavares <ttavares@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 10:23:24 by ttavares          #+#    #+#             */
-/*   Updated: 2023/10/09 11:39:54 by ttavares         ###   ########.fr       */
+/*   Updated: 2023/10/16 11:57:28 by ttavares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,17 @@
 
 ScavTrap::ScavTrap() : ClapTrap()
 {
-	this->_HP = 10;
-	this->_STM = 10;
-	this->_ATK = 0;
-	std::cout << "Default constructor called" << std::endl;
+	this->_HP = this->HP;
+	this->_STM = this->STM;
+	this->_ATK = this->ATK;
+	std::cout << "Scav is born" << std::endl;
 }
 
 ScavTrap::ScavTrap(const std::string& _name) : ClapTrap(_name)
 {
-	_HP = 100;
-	_STM = 50;
-	_ATK = 20;
+	this->_HP = this->HP;
+	this->_STM = this->STM;
+	this->_ATK = this->ATK;
 	 std::cout << "ScavTrap " << _name << " is born!" << std::endl;
 }
 

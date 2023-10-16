@@ -6,7 +6,7 @@
 /*   By: ttavares <ttavares@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 10:23:24 by ttavares          #+#    #+#             */
-/*   Updated: 2023/10/09 12:56:08 by ttavares         ###   ########.fr       */
+/*   Updated: 2023/10/16 13:07:52 by ttavares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ Dog::Dog()
 
 Dog::~Dog()
 {
-	std::cout << "Dog is destroyed!" << std::endl;
+	std::cout << "Dog destructor called!" << std::endl;
 }
 
 Dog::Dog(const Dog& cpy) : Animal(cpy)
