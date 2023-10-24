@@ -6,7 +6,7 @@
 /*   By: ttavares <ttavares@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 12:36:44 by ttavares          #+#    #+#             */
-/*   Updated: 2023/10/09 11:29:20 by ttavares         ###   ########.fr       */
+/*   Updated: 2023/10/24 11:11:30 by ttavares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ ClapTrap::ClapTrap()
 	this->_HP = 10;
 	this->_STM = 10;
 	this->_ATK = 0;
+	this->_name = "Default";
 	std::cout << "Default constructor called" << std::endl;
 }
 
