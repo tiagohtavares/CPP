@@ -6,7 +6,7 @@
 /*   By: ttavares <ttavares@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 15:31:57 by ttavares          #+#    #+#             */
-/*   Updated: 2024/01/29 15:18:54 by ttavares         ###   ########.fr       */
+/*   Updated: 2024/02/14 10:42:58 by ttavares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,16 @@ bool ScalarConverter::floatOverflow(const std::string& input)
 	return false;
 }
 
+bool ScalarConverter::doubleOverflow(const std::string& input)
+{
+	long double temp;
+
+	temp = std::strtold(input.c_str(),NULL);
+	if ( temp < -std::numeric_limits<double>::max() || temp > std::numeric_limits<double>::max())
+		return true;
+	return false;
+}
+
 void ScalarConverter::printChar(char c, const std::string& input)
 {
 	if (charOverflow(input) == true)
@@ -93,24 +103,44 @@ void ScalarConverter::printFloat(float num, const std::string& input)
 
 void ScalarConverter::printDouble(double num, const std::string& input)
 {
-	(void)input;
+	if (doubleOverflow(input) == true)
+		std::cout <<"Double: Overflow." << std::endl;
 	std::cout << "Double: " << num << std::endl;
 }
 
 void ScalarConverter::printOutput(long double number, const std::string& input)
 {
-	std::cout << "Print output " << number << std::endl;
+	std::cout << "Raw Print: " << number << std::endl;
 	printChar(static_cast<char>(number), input);
 	printInt(static_cast<int>(number), input);
 	printFloat(static_cast<float>(number), input);
 	printDouble(static_cast<double>(number), input);
 }
 
+void ScalarConverter::printPseudo(const std::string& input)
+{
+	std::cout << "Char: Impossible" << std::endl;
+	std::cout << "Int: Impossible" << std::endl;
+
+	if (input.find("nan") != std::string::npos)
+	{
+		std::cout << "Float: nanf" << std::endl;
+		std::cout << "Double: nan" << std::endl;
+	}
+	else
+	{
+		std::cout << "Float: " << input[0] << "inff" << std::endl;
+		std::cout << "Double: " << input[0] << "inf" << std::endl;
+	}
+}
+
 bool ScalarConverter::isChar(const std::string& input)
 {
 	if (input.length() == 1)
 	{
-		if (input[0] >= 31 && input[0] <= 127)
+		if (input[0] >= '0' && input[0] <= '9')
+			return (false);
+		if (input[0] >= 31 && input[0] < 127)
 			return true;
 	}
 	return false;
@@ -132,23 +162,47 @@ bool ScalarConverter::isInt(const std::string& input)
 
 bool ScalarConverter::isFloat(const std::string& input)
 {
-	size_t i = 0;
 	if (input[input.length() - 1] != 'f')
 		return false;
 	if (input.find_first_of('.') != input.find_last_of('.') || input.find('.') == std::string::npos)
 		return false;
-	while (i < input.length() - 1)
+	for (size_t i = 0; (i < input.length() - 1); i++)
 	{
-		if(i == 0 && input[i] == '-')
-			i++;
-		else if (input[i] == '.')
-			i++;
-		else
-			if(!isdigit(input[i]))
-				return false;
-		i++;
+		if (i == 0 && input[i] == '-')
+			continue;
+		if (input[i] == '.')
+			continue;
+		if (!isdigit(input[i]))
+			return (false);
 	}
 	return true;
+}
+
+bool ScalarConverter::isDouble(const std::string& input)
+{
+	if (input.find_first_of('.') != input.find_last_of('.') || input.find('.') == std::string::npos)
+		return false;
+	for (size_t i = 0; (i < input.length() - 1); i++)
+	{
+		if (i == 0 && input[i] == '-')
+			continue;
+		if (input[i] == '.')
+		{
+			if (!isdigit(input[i + 1]) && !isdigit(input[i - 1]))
+				return (false);
+			continue;
+		}
+		if (!isdigit(input[i]))
+			return (false);
+	}
+	return true;
+}
+
+bool ScalarConverter::isPseudo(const std::string& input)
+{
+	if (input == "-inff" || input == "+inff" || input == "nanf" || input == "-inf" || input == "+inf" || input == "nan")
+		return (true);
+	return (false);
 }
 
 void ScalarConverter::convert(const std::string& input)
@@ -169,10 +223,19 @@ void ScalarConverter::convert(const std::string& input)
 		std::cout << "Is float!" << std::endl;
 		printOutput(std::strtof(input.c_str(), NULL), input);
 	}
-	// else if (isDouble(input))
-	// {
-
-	// }
+	else if (isDouble(input))
+	{
+		std::cout << "Is Double!" << std::endl;
+		printOutput(std::strtof(input.c_str(), NULL), input);
+	}
+	else if (isPseudo(input))
+	{
+		std::cout << "Is Pseudo" << std::endl;
+		printPseudo(input);
+	}
 	else
+	{
+		std::cout << "Invalid type." << std::endl;
 		return ;
+	}
 }

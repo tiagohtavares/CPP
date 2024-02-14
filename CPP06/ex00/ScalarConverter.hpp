@@ -6,7 +6,7 @@
 /*   By: ttavares <ttavares@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 15:32:25 by ttavares          #+#    #+#             */
-/*   Updated: 2024/01/29 12:56:46 by ttavares         ###   ########.fr       */
+/*   Updated: 2024/02/14 10:35:31 by ttavares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,11 +37,13 @@ class ScalarConverter
 		static void printDouble(double num, const std::string& input);
 
 		static void printOutput(long double number, const std::string& input);
+		static void printPseudo(const std::string& input);
 
 		static bool isChar(const std::string& input);
 		static bool isInt(const std::string& input);
 		static bool isFloat(const std::string& input);
 		static bool isDouble(const std::string& input);
+		static bool isPseudo(const std::string& input);
 
 		static void convert(const std::string& input);
 };
