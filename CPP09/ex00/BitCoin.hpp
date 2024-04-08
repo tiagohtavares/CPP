@@ -6,7 +6,7 @@
 /*   By: ttavares <ttavares@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 14:07:24 by ttavares          #+#    #+#             */
-/*   Updated: 2024/03/22 16:00:48 by ttavares         ###   ########.fr       */
+/*   Updated: 2024/04/08 15:06:54 by ttavares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,7 @@
 class BitCoin
 {
     private:
-        std::map<std::string, int> txt;
-        std::map<std::string, double> data;
+        std::map<std::string, float> data;
     public:
         BitCoin();
         ~BitCoin();
@@ -32,6 +31,7 @@ class BitCoin
 
         void readData();
         void readInput(std::string path);
-        void exchange();
-
+        bool validateDate(std::string date);
+        bool validateValue(std::string value);
+        void exchange(std::string date, std::string value);
 };

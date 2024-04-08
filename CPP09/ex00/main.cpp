@@ -6,7 +6,7 @@
 /*   By: ttavares <ttavares@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 15:49:44 by ttavares          #+#    #+#             */
-/*   Updated: 2024/03/22 15:46:35 by ttavares         ###   ########.fr       */
+/*   Updated: 2024/04/08 15:06:22 by ttavares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,19 @@ int main(int argc, char **argv)
 	if (argc != 2)
 	{
 		std::cerr << "Error: Wrong number of args." << std::endl;
+		return 0;
 	}
-	else
+
+	try 
 	{
 		BitCoin bitcoin;
 
 		bitcoin.readData();
 		bitcoin.readInput(argv[1]);
 	}
+    catch (std::exception& e) 
+	{
+        std::cerr << e.what() << std::endl;
+    }
 	return 0;
 }
