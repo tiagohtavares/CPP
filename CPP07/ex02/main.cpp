@@ -6,7 +6,7 @@
 /*   By: ttavares <ttavares@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 15:49:44 by ttavares          #+#    #+#             */
-/*   Updated: 2024/02/19 19:43:06 by ttavares         ###   ########.fr       */
+/*   Updated: 2024/04/23 13:26:56 by ttavares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,18 @@ int main(void)
 	for(int i = 0; i < array3.size(); i++)
 	{
 		std::cout << array3[i] << " | ";
+	}
+	std::cout << std::endl;
+	std::cout << "string arrays" << std::endl;
+	Array<const char*> array4(2);
+	std::cout << array4.size() << std::endl;
+	for(int i = 0; i < array4.size(); i++)
+	{
+		array4[i] = "adfd";
+	}
+	for(int i = 0; i < array4.size(); i++)
+	{
+		std::cout << array4[i] << " | ";
 	}
 
 	std::cout << std::endl;

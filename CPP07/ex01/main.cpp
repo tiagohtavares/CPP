@@ -6,7 +6,7 @@
 /*   By: ttavares <ttavares@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 15:49:44 by ttavares          #+#    #+#             */
-/*   Updated: 2024/02/19 19:04:46 by ttavares         ###   ########.fr       */
+/*   Updated: 2024/04/23 12:28:09 by ttavares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int main(void)
 {
 
 	std::cout << "int: " << std::endl;
-	int iarray[] = {42, -42, 27, 345, -123456};
+	int iarray[] = {42, -42, 13, 41, 8751775};
 	::iter(iarray, 5, ::print);
 	std::cout << std::endl;
 	std::cout << "int squared: " << std::endl;
@@ -37,7 +37,7 @@ int main(void)
 	std::cout << std::endl;
 
 	std::cout << "char: " << std::endl;
-	char carray[] = {'A', 'B', 'C', '5'};
+	char carray[] = {'A', 'B', 'C', '1'};
 	::iter(carray, 4, ::print);
 	std::cout << std::endl;
 	std::cout << "char to lower: " << std::endl;
