@@ -6,7 +6,7 @@
 /*   By: ttavares <ttavares@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 11:05:15 by ttavares          #+#    #+#             */
-/*   Updated: 2024/04/12 12:38:40 by ttavares         ###   ########.fr       */
+/*   Updated: 2024/04/23 14:55:52 by ttavares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,20 @@ RPN &RPN::operator=(const RPN& original)
 
 bool RPN::inputValid(std::string input)
 {
+    if (input.empty())
+    {
+        return false;
+    }
+    std::string temp;
+    int error = 0;
+    for(size_t i = 0; i < input.length(); i++)
+    {
+        temp = input[i];
+        if (isdigit(temp[0]))
+            error = 1;
+    }
+    if (error != 1)
+        return false;
     std::string token;
     for(size_t i = 0; i < input.length(); i++)
     {
