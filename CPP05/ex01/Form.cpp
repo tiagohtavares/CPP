@@ -6,7 +6,7 @@
 /*   By: ttavares <ttavares@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 12:59:16 by ttavares          #+#    #+#             */
-/*   Updated: 2024/01/15 14:54:23 by ttavares         ###   ########.fr       */
+/*   Updated: 2024/04/23 11:20:19 by ttavares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,6 @@ Form &Form::operator=(const Form& cpy)
 {
 	if(this != &cpy)
 	{
-		//const_cast<std::string&>(this->_name) = cpy._name; -> Since it's a const i think the correct thing to do is not to change it.
 		this->_signed = cpy._signed;
 		//std::cout << "Copy assignment operator called" << std::endl;
 	}

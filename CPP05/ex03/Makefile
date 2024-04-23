@@ -6,7 +6,7 @@
 #    By: ttavares <ttavares@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/20 12:26:32 by ttavares          #+#    #+#              #
-#    Updated: 2024/01/22 12:40:03 by ttavares         ###   ########.fr        #
+#    Updated: 2024/04/23 11:47:12 by ttavares         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,6 +28,6 @@ clean:
 	$(RM) $(OBJS)
 
 fclean:	clean
-	$(RM) $(NAME)
+	$(RM) $(NAME) reara_shrubbery
 
 re:	fclean all clean

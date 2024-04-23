@@ -6,7 +6,7 @@
 /*   By: ttavares <ttavares@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 12:16:21 by ttavares          #+#    #+#             */
-/*   Updated: 2024/01/18 15:54:56 by ttavares         ###   ########.fr       */
+/*   Updated: 2024/04/23 11:41:52 by ttavares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,18 @@ int main(void)
 	jeff.signForm(moses);
 	jeff.executeForm(moses);
 
+	std::cout << std::endl;
+
 	jeff.signForm(pine);
 	jeff.executeForm(pine);
+	
+	std::cout << std::endl;
+	std::cout << "Opening shruberry: " << std::endl;
+	std::ifstream f("Pine_shrubbery");
+
+	if (f.is_open())
+		std::cout << f.rdbuf();
+	std::cout << std::endl;
 
 	try
 	{

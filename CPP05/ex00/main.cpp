@@ -6,7 +6,7 @@
 /*   By: ttavares <ttavares@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 12:16:21 by ttavares          #+#    #+#             */
-/*   Updated: 2024/01/15 12:28:34 by ttavares         ###   ########.fr       */
+/*   Updated: 2024/04/23 11:14:26 by ttavares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ int main(void)
 	test5 = test2;
 	std::cout << test5 << std::endl;
 
+	std::cout << "Create bureaucrat error -15: " << std::endl;
 	try
 	{
 		Bureaucrat error("error", -15);
@@ -37,6 +38,8 @@ int main(void)
 		std::cerr << e.what() << std::endl;
 	}
 
+	std::cout << std::endl;
+	std::cout << "Increment Jeff Grade 1: " << std::endl;
 	try
 	{
 		test2.incrementGrade();
@@ -46,6 +49,8 @@ int main(void)
 		std::cerr << e.what() << std::endl;
 	}
 
+	std::cout << std::endl;
+	std::cout << "Decrement Tom Grade 150: " << std::endl;
 	try
 	{
 		test3.decrementGrade();

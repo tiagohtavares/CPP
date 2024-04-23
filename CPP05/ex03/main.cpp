@@ -6,7 +6,7 @@
 /*   By: ttavares <ttavares@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 12:16:21 by ttavares          #+#    #+#             */
-/*   Updated: 2024/01/22 15:28:23 by ttavares         ###   ########.fr       */
+/*   Updated: 2024/04/23 11:47:46 by ttavares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,5 +90,14 @@ int main(void)
 	std::cout << *inv << std::endl;
 	tom.signForm(*inv);
 	tom.executeForm(*inv);
+
+	try
+	{
+		inv = ezkiel.makeForm("fadfa request", "reara");
+	}
+	catch (std::exception& e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
 	return (0);
 }

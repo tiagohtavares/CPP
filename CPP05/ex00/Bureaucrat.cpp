@@ -14,18 +14,18 @@
 
 Bureaucrat::Bureaucrat() : _name("Default"), _grade(75)
 {
-	std::cout << "Bureaucrat constructor called!" << std::endl;
+	//std::cout << "Bureaucrat constructor called!" << std::endl;
 }
 
 Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name)
 {
-	std::cout << "Bureaucrat constructor called!" << std::endl;
+	//std::cout << "Bureaucrat constructor called!" << std::endl;
 	setGrade(grade);
 }
 
 Bureaucrat::~Bureaucrat()
 {
-	std::cout << "Bureaucrat destructor called!" << std::endl;
+	//std::cout << "Bureaucrat destructor called!" << std::endl;
 }
 
 Bureaucrat::Bureaucrat(const Bureaucrat& cpy) : _name(cpy._name) , _grade(cpy._grade)
