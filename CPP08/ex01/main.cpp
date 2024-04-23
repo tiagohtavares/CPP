@@ -6,7 +6,7 @@
 /*   By: ttavares <ttavares@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 15:49:44 by ttavares          #+#    #+#             */
-/*   Updated: 2024/03/20 15:14:46 by ttavares         ###   ########.fr       */
+/*   Updated: 2024/04/23 14:07:30 by ttavares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ int main( void )
 	std::cout << std::endl;
 
 	std::cout << "Vector: " << std::endl;
-	Span sp1 = Span(10);
+	Span sp1 = Span(100);
 	sp1.fill();
 	sp1.print();
 	std::cout << "Shortest span: " << sp1.shortestSpan() << std::endl;

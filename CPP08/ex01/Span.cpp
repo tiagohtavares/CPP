@@ -6,7 +6,7 @@
 /*   By: ttavares <ttavares@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 13:03:18 by ttavares          #+#    #+#             */
-/*   Updated: 2024/03/20 14:28:36 by ttavares         ###   ########.fr       */
+/*   Updated: 2024/04/23 14:14:00 by ttavares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,7 +102,7 @@ unsigned int Span::longestSpan()
 
 int gen(void)
 {
-    return(std::rand() % 10000);
+    return(std::rand() % 100000);
 }
 
 void Span::fill()
