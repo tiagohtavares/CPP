@@ -75,6 +75,7 @@ int main(void)
 	std::cout << *test << std::endl;
 	tom.signForm(*test);
 	tom.executeForm(*test);
+	delete test;
 
 	Intern ezkiel;
 	AForm *inv;
@@ -90,10 +91,12 @@ int main(void)
 	std::cout << *inv << std::endl;
 	tom.signForm(*inv);
 	tom.executeForm(*inv);
+	delete inv;
 
 	try
 	{
 		inv = ezkiel.makeForm("fadfa request", "reara");
+		delete inv;
 	}
 	catch (std::exception& e)
 	{

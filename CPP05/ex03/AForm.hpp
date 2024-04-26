@@ -27,7 +27,7 @@ class AForm
 	public:
 		AForm();
 		AForm(std::string name, int reqGradeExec, int reqGradeSign);
-		~AForm();
+		virtual ~AForm();
 		AForm(const AForm& cpy );
 		AForm &operator=(const AForm& cpy);
 
