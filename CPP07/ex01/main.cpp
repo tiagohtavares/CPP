@@ -44,4 +44,9 @@ int main(void)
 	::iter(carray, 4, ::ft_tolower);
 	::iter(carray, 4, ::print);
 	std::cout << std::endl;
+
+	std::cout << "string: " <<std::endl;
+	std::string stringarray[] = {"asd", "dasd", "fadf"};
+	::iter(stringarray, 3, print);
+	std::cout << std::endl;
 }

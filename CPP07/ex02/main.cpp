@@ -20,6 +20,13 @@ int main(void)
 
 	std::cout << "int arrays" << std::endl;
 
+
+	std::cout << "empty test" << std::endl;
+	Array<int> *test = new Array<int>();
+	std::cout << test->size() << std::endl;
+
+	delete test;
+	std::cout << "normal test" << std::endl;
 	Array<int> array1(10);
 	std::cout << array1.size() << std::endl;
 
